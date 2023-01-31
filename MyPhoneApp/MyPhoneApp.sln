@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.Domain", "MyPhone.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.Persistence", "MyPhone.Persistence\MyPhone.Persistence.csproj", "{CD6AAA2E-9788-4E1E-8A8B-12550E153537}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.ApplicationService", "MyPhone.ApplicationService\MyPhone.ApplicationService.csproj", "{DF82CA85-0959-449A-A957-C45F46B3D787}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF82CA85-0959-449A-A957-C45F46B3D787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF82CA85-0959-449A-A957-C45F46B3D787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF82CA85-0959-449A-A957-C45F46B3D787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF82CA85-0959-449A-A957-C45F46B3D787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
