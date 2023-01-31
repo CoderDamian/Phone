@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.Domain", "MyPhone.Domain\MyPhone.Domain.csproj", "{C8A9705F-EC32-427B-BAC6-01946499FB0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.Persistence", "MyPhone.Persistence\MyPhone.Persistence.csproj", "{CD6AAA2E-9788-4E1E-8A8B-12550E153537}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8A9705F-EC32-427B-BAC6-01946499FB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A9705F-EC32-427B-BAC6-01946499FB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A9705F-EC32-427B-BAC6-01946499FB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A9705F-EC32-427B-BAC6-01946499FB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6AAA2E-9788-4E1E-8A8B-12550E153537}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
