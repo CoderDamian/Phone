@@ -28,6 +28,10 @@ namespace MyPhone.Persistence.Data
         {
             modelBuilder.ApplyConfiguration(new PersonMap());
             modelBuilder.ApplyConfiguration(new PhoneMap());
+
+            modelBuilder.Entity<Person>()
+                .HasMany(p => p.Phones)
+                .WithOne();
         }
     }
 }
