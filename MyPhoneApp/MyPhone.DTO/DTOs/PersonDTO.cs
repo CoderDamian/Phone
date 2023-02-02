@@ -1,4 +1,4 @@
-﻿namespace MyPhone.ApplicationService.DTOs
+﻿namespace MyPhone.DTO.DTOs
 {
     public class PersonDTO
     {

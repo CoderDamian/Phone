@@ -1,0 +1,33 @@
+﻿@page
+@model MyPhone.UI.Pages.Person.IndexModel
+@{
+    <h1>People</h1>
+
+    <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha nacimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in Model.PersonDTO.OrderBy(p => p.Name))
+                {
+                    <tr>
+                        <td>
+                            @person.Name
+                        </td>
+                        <td>
+                            @person.DateOfBirth
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-ID="@person.ID">Edit</a>
+                            <button type="submit" asp-page-handler="Delete" asp-route-ID="@person.ID">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+}

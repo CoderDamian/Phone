@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MyPhone.ApplicationService.Contracts;
-using MyPhone.ApplicationService.DTOs;
 using MyPhone.Domain.Entities;
+using MyPhone.DTO.DTOs;
 using MyPhone.Persistence.Contracts;
 
 namespace MyPhone.ApplicationService.Services

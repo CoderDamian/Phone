@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPhone.Persistence", "MyPh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPhone.ApplicationService", "MyPhone.ApplicationService\MyPhone.ApplicationService.csproj", "{DF82CA85-0959-449A-A957-C45F46B3D787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhone.RESTful", "MyPhone.RESTful\MyPhone.RESTful.csproj", "{F6D35BC3-296D-4EE7-8064-D76F13B10EF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPhone.RESTful", "MyPhone.RESTful\MyPhone.RESTful.csproj", "{F6D35BC3-296D-4EE7-8064-D76F13B10EF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPhone.UI", "MyPhone.UI\MyPhone.UI.csproj", "{10F00938-1945-4B54-8776-85316323B3F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyPhone.DTO", "MyPhone.DTO\MyPhone.DTO.csproj", "{3308D9E9-1B60-4CDD-A7D5-933203D8FFA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{F6D35BC3-296D-4EE7-8064-D76F13B10EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6D35BC3-296D-4EE7-8064-D76F13B10EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6D35BC3-296D-4EE7-8064-D76F13B10EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F00938-1945-4B54-8776-85316323B3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F00938-1945-4B54-8776-85316323B3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F00938-1945-4B54-8776-85316323B3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F00938-1945-4B54-8776-85316323B3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3308D9E9-1B60-4CDD-A7D5-933203D8FFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3308D9E9-1B60-4CDD-A7D5-933203D8FFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3308D9E9-1B60-4CDD-A7D5-933203D8FFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3308D9E9-1B60-4CDD-A7D5-933203D8FFA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,18 @@
+﻿@page
+@model MyPhone.UI.Pages.Person.CreateModel
+@{
+    <h1>Person. Create</h1>
+
+    <form method="post">
+        <label asp-for="PersonDTO.ID"></label>
+        <input asp-for="PersonDTO.ID" class="form-control">
+
+        <label asp-for="PersonDTO.Name"></label>
+        <input asp-for="PersonDTO.Name" class="form-control">
+
+        <label asp-for="PersonDTO.DateOfBirth"></label>
+        <input asp-for="PersonDTO.DateOfBirth" class="form-control">
+
+        <button type="submit">Guardar</button>
+    </form>
+}
