@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using MyPhone.ApplicationService.Contracts;
-using MyPhone.ApplicationService.DTOs;
+using MyPhone.DTO.DTOs;
 
 namespace MyPhone.RESTful.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PersonController : ControllerBase
     {
         private readonly ILogger<PersonController> _logger;
@@ -17,10 +17,29 @@ namespace MyPhone.RESTful.Controllers
             this._personService = personService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public async Task<IEnumerable<PersonDTO>> Get()
         {
             return await _personService.GetAll().ConfigureAwait(false);
+        }
+
+        [HttpGet("{ID}")]
+        public async Task<IActionResult> GetByID(int ID)
+        {
+            try
+            {
+                PersonDTO personDTO = await _personService.GetByID(ID).ConfigureAwait(false);
+
+                if (personDTO == null)
+                    return BadRequest();
+
+                return Ok(personDTO);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         [HttpDelete("{ID}")]
@@ -28,11 +47,13 @@ namespace MyPhone.RESTful.Controllers
         {
             await _personService.Delete(ID).ConfigureAwait(false);
 
+            await _personService.SaveAsync().ConfigureAwait(false);
+
             return Accepted();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromQuery]PersonCreateDTO personDTO)
+        public async Task<IActionResult> Save([FromBody]PersonCreateDTO personDTO)
         {
             if (personDTO == null)
                 throw new NullReferenceException(nameof(personDTO));
@@ -44,6 +65,8 @@ namespace MyPhone.RESTful.Controllers
             {
                 await _personService.Add(personDTO).ConfigureAwait(false);
 
+                await _personService.SaveAsync().ConfigureAwait(false);
+
                 return Ok();
             }
             catch (Exception ex)
@@ -54,7 +77,7 @@ namespace MyPhone.RESTful.Controllers
         }
 
         [HttpPut("{ID}")]
-        public async Task<IActionResult> Update([FromQuery] PersonUpdateDTO personDTO, int ID)
+        public async Task<IActionResult> Update([FromBody] PersonUpdateDTO personDTO, int ID)
         {
             if (personDTO == null)
                 throw new NullReferenceException(nameof(personDTO));
@@ -65,6 +88,8 @@ namespace MyPhone.RESTful.Controllers
             try
             {
                 await _personService.Update(ID, personDTO).ConfigureAwait(false);
+
+                await _personService.SaveAsync().ConfigureAwait(false);
 
                 return NoContent();
             }

@@ -1,4 +1,4 @@
-﻿using MyPhone.ApplicationService.DTOs;
+﻿using MyPhone.DTO.DTOs;
 
 namespace MyPhone.ApplicationService.Contracts
 {

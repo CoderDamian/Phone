@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MyPhone.ApplicationService.Contracts;
-using MyPhone.ApplicationService.DTOs;
+using MyPhone.DTO.DTOs;
 using MyPhone.Domain.Entities;
 using MyPhone.Persistence.Contracts;
 

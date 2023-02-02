@@ -1,6 +1,6 @@
-﻿namespace MyPhone.ApplicationService.DTOs
+﻿namespace MyPhone.DTO.DTOs
 {
-    public class PersonCreateDTO
+    public class PersonUpdateDTO
     {
         public int ID { get; set; }
         public string Name { get; set; } = string.Empty;

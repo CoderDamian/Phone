@@ -1,0 +1,17 @@
+﻿@page "{ID:int}"
+@model MyPhone.UI.Pages.Person.EditModel
+@{
+    <h1>Person Edit</h1>
+
+    <form method="post">
+        <input type="hidden" asp-for="PersonDTO.ID">
+
+        <label asp-for="PersonDTO.Name"></label>
+        <input asp-for="PersonDTO.Name" class="form-control">
+
+        <label asp-for="PersonDTO.DateOfBirth"></label>
+        <input asp-for="PersonDTO.DateOfBirth" class="form-control">
+
+        <button type="submit">Save</button>
+    </form>
+}

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MyPhone.ApplicationService.DTOs;
+using MyPhone.DTO.DTOs;
 using MyPhone.Domain.Entities;
 
 namespace MyPhone.ApplicationService.Mappings
