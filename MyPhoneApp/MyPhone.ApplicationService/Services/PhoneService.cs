@@ -43,6 +43,11 @@ namespace MyPhone.ApplicationService.Services
             return phonesDTO;
         }
 
+        public IEnumerable<PhoneDTO> GetPhonesWithOwner()
+        {
+            return _repository.PhoneRepository.GetPhonesWithOwner();
+        }
+
         public async Task<PhoneDTO> GetByID(int ID)
         {
             Phone? phone = await _repository.PhoneRepository.GetByID(ID).ConfigureAwait(false);
