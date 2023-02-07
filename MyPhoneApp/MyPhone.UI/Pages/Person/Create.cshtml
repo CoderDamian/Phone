@@ -13,6 +13,83 @@
         <label asp-for="PersonDTO.DateOfBirth"></label>
         <input asp-for="PersonDTO.DateOfBirth" class="form-control">
 
-        <button type="submit">Guardar</button>
+        <table id="phones">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Numero</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int limite = Model.PersonDTO.PhonesDTO.Count();
+                }
+                @for (int i = 0; i < limite; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.EditorFor(x=>x.PersonDTO.PhonesDTO[i].Tipo, new { htmlAttributes = new {@class = "form-control" }})
+                        </td>
+                        <td>
+                            @Html.EditorFor(x=>x.PersonDTO.PhonesDTO[i].Numero, new { htmlAtributes = new {@class = "form-control"}})
+                        </td>
+                        <td>
+                            <button id="btnAdd-@i" type="button" onclick="AddItem(this)">Add</button>
+                        </td>
+                        <td>
+                            <button id="btnDel-@i" type="button" onclick="Delete(this)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <input type="hidden" id="hdnLastIndex" value="0">
+
+        <div class="form-row">
+            <div class="form-group">
+                <button id="btnGuardar"
+                        class="btn btn-primary"
+                        type="submit">
+                    Guardar
+                </button>
+            </div>
+
     </form>
 }
+<script>
+    function Delete(btn) {
+        $(btn).closest('tr').remove();
+    }
+
+    function AddItem(btn) {
+        var table = document.getElementById('phones');
+        var rows = table.getElementsByTagName('tr');
+
+        var rowOuterHtml = rows[rows.length - 1].outerHTML;
+
+        var lastrowIdx = document.getElementById('hdnLastIndex').value;
+
+        var nextrowIdx = eval(lastrowIdx) + 1;
+
+        document.getElementById('hdnLastIndex').value = nextrowIdx;
+
+        rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx + '_', '_' + nextrowIdx + '_');
+        rowOuterHtml = rowOuterHtml.replaceAll('[' + lastrowIdx + ']', '[' + nextrowIdx + ']');
+        rowOuterHtml = rowOuterHtml.replaceAll('-' + lastrowIdx, '-' + nextrowIdx);
+
+        var newRow = table.insertRow();
+        newRow.innerHTML = rowOuterHtml;
+
+        var btnAddID = btn.id;
+        var btnDeleteid = btnAddID.replaceAll('btnadd', 'btnremove');
+
+        var delbtn = document.getElementById(btnDeleteid);
+        delbtn.classList.add("visible");
+        delbtn.classList.remove("invisible");
+
+        var addbtn = document.getElementById(btnAddID);
+        addbtn.classList.remove("visible");
+        addbtn.classList.add("invisible");
+    }
+</script>

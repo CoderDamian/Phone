@@ -1,0 +1,25 @@
+﻿@page
+@model MyPhone.UI.Pages.Phone.IndexModel
+@{
+    <h1>Phones</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Owner    </th>
+                <th>Tipo</th>
+                <th>Numero</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var phone in Model.PhonesDTO)
+            {
+                <tr>
+                    <td>@phone.Owner</td>
+                    <td>@phone.Tipo</td>
+                    <td>@phone.Numero</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

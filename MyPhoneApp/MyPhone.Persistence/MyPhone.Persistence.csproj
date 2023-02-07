@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyPhone.Domain\MyPhone.Domain.csproj" />
+    <ProjectReference Include="..\MyPhone.DTO\MyPhone.DTO.csproj" />
   </ItemGroup>
 
 </Project>

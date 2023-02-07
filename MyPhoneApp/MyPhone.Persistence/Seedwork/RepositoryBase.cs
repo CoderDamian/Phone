@@ -6,7 +6,8 @@ namespace MyPhone.Persistence.Seedwork
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
-        private readonly MyDBContext _myDBContext;
+        //private readonly MyDBContext _myDBContext;
+        public MyDBContext _myDBContext { get;private set; }
 
         public RepositoryBase(MyDBContext myDBContext)
         {
@@ -23,7 +24,7 @@ namespace MyPhone.Persistence.Seedwork
             _myDBContext.Set<T>().Remove(entity);
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAll()
         {
             return await _myDBContext.Set<T>().ToListAsync().ConfigureAwait(false);
         }

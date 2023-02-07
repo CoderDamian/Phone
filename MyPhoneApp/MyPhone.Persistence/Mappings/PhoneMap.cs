@@ -18,6 +18,9 @@ namespace MyPhone.Persistence.Mappings
 
             builder.Property(p => p.Numero)
                 .HasColumnName("NUMERO");
+
+            builder.Property(p => p.PersonFK)
+                .HasColumnName("PERSONFK");
         }
     }
 }

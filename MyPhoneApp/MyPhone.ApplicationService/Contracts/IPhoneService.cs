@@ -7,6 +7,7 @@ namespace MyPhone.ApplicationService.Contracts
         Task Add(PhoneCreateDTO phoneCreateDTO);
         Task Delete(int ID);
         Task<IEnumerable<PhoneDTO>> GetAll();
+        IEnumerable<PhoneDTO> GetPhonesWithOwner();
         Task<PhoneDTO> GetByID(int ID);
         Task Update(int ID, PhoneUpdateDTO entity);
         Task SaveAsync();

@@ -25,6 +25,12 @@ namespace MyPhone.UI.Pages.Person
             {
                 PropertyNameCaseInsensitive = true
             };
+
+            PersonDTO = new PersonCreateDTO();
+            PersonDTO.PhonesDTO = new List<PhoneCreateDTO>()
+            {
+                new PhoneCreateDTO {Tipo="", Numero=""}
+            };
         }
 
         public void OnGet()
@@ -33,6 +39,11 @@ namespace MyPhone.UI.Pages.Person
 
         public async Task<IActionResult> OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             var person = new StringContent(JsonSerializer.Serialize(PersonDTO), Encoding.UTF8, Application.Json);
 
             using var respone = await _httpClient.PostAsync("person", person).ConfigureAwait(false);
