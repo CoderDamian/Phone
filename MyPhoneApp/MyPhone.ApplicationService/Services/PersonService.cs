@@ -23,6 +23,7 @@ namespace MyPhone.ApplicationService.Services
                 throw new NullReferenceException(nameof(personCreateDTO));
 
             Person person = _mapper.Map<Person>(personCreateDTO);
+            person.Phones = _mapper.Map<ICollection<Phone>>(personCreateDTO.PhonesDTO);
 
             await _repository.PersonRepository.Create(person).ConfigureAwait(false);
         }

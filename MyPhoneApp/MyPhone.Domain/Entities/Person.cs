@@ -7,5 +7,10 @@ namespace MyPhone.Domain.Entities
         public string Name { get; set; } = string.Empty;
         public DateTime DateOfBirth { get; set; }
         public ICollection<Phone> Phones { get; set; }
+
+        public Person()
+        {
+            Phones = new HashSet<Phone>();
+        }
     }
 }
