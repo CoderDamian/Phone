@@ -29,10 +29,6 @@ namespace MyPhone.Persistence.Data
             modelBuilder.ApplyConfiguration(new PersonMap());
             modelBuilder.ApplyConfiguration(new PhoneMap());
 
-            //modelBuilder.Entity<Person>()
-            //    .HasMany(p => p.Phones)
-            //    .WithOne();
-
             modelBuilder.Entity<Phone>()
                 .HasOne(p => p.Person)
                 .WithMany(p => p.Phones)

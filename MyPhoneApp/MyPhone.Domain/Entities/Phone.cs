@@ -7,6 +7,7 @@ namespace MyPhone.Domain.Entities
         public string Tipo { get; set; } = string.Empty;
         public string Numero { get; set; } = string.Empty;
         public int PersonFK { get; set; }
+
         public Person Person { get; set; }
     }
 }
